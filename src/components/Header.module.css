@@ -1,0 +1,117 @@
+/* src/components/Header.module.css */
+.header {
+  background-color: var(--bg-color-light);
+  padding: var(--space-sm) 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure header stays on top */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden on desktop */
+  padding: var(--space-xs);
+  color: var(--text-color-dark);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--text-color-dark);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: var(--space-xs) 0; /* Add padding for larger click area */
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+/* --- Mobile Responsiveness (Mobile-First) --- */
+@media (max-width: 768px) {
+  .menuButton {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color-light);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-md);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%); /* Hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 999; /* Below header, above content */
+  }
+
+  .nav.open {
+    transform: translateY(0); /* Slide down when open */
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navList {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .navItem {
+    width: 100%;
+  }
+
+  .navLink {
+    display: block; /* Make links full width */
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navLink:last-child {
+    border-bottom: none;
+  }
+
+  .navCta {
+    width: 100%; /* Make CTA button full width */
+    text-align: center;
+  }
+}

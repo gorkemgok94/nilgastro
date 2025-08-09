@@ -1,0 +1,76 @@
+/* src/components/Features.module.css */
+.features {
+  background-color: var(--bg-color-light);
+  padding: var(--space-xxl) 0;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: var(--space-sm);
+  color: var(--primary-color);
+}
+
+.subheading {
+  font-size: 1.125rem; /* 18px */
+  margin-bottom: var(--space-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: var(--space-lg);
+}
+
+.featureCard {
+  background-color: var(--bg-color-dark);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.iconWrapper {
+  background-color: var(--primary-color);
+  padding: var(--space-sm);
+  border-radius: 50%;
+  margin-bottom: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureIcon {
+  width: 3rem; /* 48px */
+  height: 3rem;
+  color: var(--text-color-light);
+}
+
+.cardTitle {
+  font-size: 1.375rem; /* 22px */
+  margin-bottom: var(--space-xs);
+  color: var(--text-color-dark);
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: var(--text-color-dark);
+}
+
+/* --- Desktop Responsiveness --- */
+@media (min-width: 769px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+  }
+}

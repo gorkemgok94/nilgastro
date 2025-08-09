@@ -1,0 +1,46 @@
+/* src/components/CallToAction.module.css */
+.cta {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: var(--space-xxl) 0;
+  text-align: center;
+}
+
+.heading {
+  color: inherit; /* Inherit text-color-light */
+  margin-bottom: var(--space-sm);
+  font-size: 2.5rem; /* 40px */
+}
+
+.subheading {
+  font-size: 1.25rem; /* 20px */
+  margin-bottom: var(--space-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9; /* Slightly less prominent */
+}
+
+.cta .button {
+  background-color: var(--text-color-light);
+  color: var(--primary-color);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 1.25rem; /* Larger button */
+  font-weight: 700;
+}
+
+.cta .button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem; /* 32px */
+  }
+  .subheading {
+    font-size: 1rem;
+  }
+}
