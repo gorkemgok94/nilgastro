@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Hero.module.css';
 
 // Placeholder image (replace with your own)
-import heroImage from '../assets/hero-placeholder.webp'; // Create this file or replace path
+import heroImage from '../assets/HakanGorkem.jpg'; // Create this file or replace path
 
 function Hero() {
   return (
