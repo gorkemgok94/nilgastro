@@ -6,11 +6,11 @@ function CallToAction() {
   return (
     <section id="cta" className={styles.cta}>
       <div className={`${styles.container} container`}>
-        <h2 className={styles.heading}>Ready to Get Started?</h2>
+        <h2 className={styles.heading}>Bist du bereit, Qualität zu erleben?</h2>
         <p className={styles.subheading}>
-          Join thousands of satisfied customers who are already transforming their businesses.
+          Schließen Sie sich Tausenden zufriedener Kunden an, die bereits ihre Unternehmen transformieren.
         </p>
-        <a href="#" className="button button-primary">Sign Up Today!</a>
+        <a href="#" className="button button-primary">Schickst du deine Gewerbeschein!</a>
       </div>
     </section>
   );

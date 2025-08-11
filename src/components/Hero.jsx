@@ -11,14 +11,14 @@ function Hero() {
       <div className={`${styles.container} container`}>
         <div className={styles.content}>
           <h1 className={styles.headline}>
-            Build Your Digital Presence with Ease
+            Von A nach B, mit Herz und Verstand.
           </h1>
           <p className={styles.subheadline}>
-            Innovative solutions for modern businesses. Grow your brand, reach more customers, and simplify your workflow.
+            Intelligente Logistik für eine schnellebige Welt. Liefern Sie schneller, senken Sie Kosten und begeistern Sie Ihre Kunden.
           </p>
           <div className={styles.buttons}>
-            <a href="#cta" className="button button-primary">Get Started Now</a>
-            <a href="#features" className="button button-secondary">Learn More</a>
+            <a href="#cta" className="button button-primary">Kunde werden</a>
+            <a href="#features" className="button button-secondary">Produkte</a>
           </div>
         </div>
         <div className={styles.imageWrapper}>

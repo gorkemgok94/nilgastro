@@ -32,9 +32,9 @@ function Testimonials() {
   return (
     <section id="testimonials" className={styles.testimonials}>
       <div className={`${styles.container} container`}>
-        <h2 className={styles.heading}>What Our Customers Say</h2>
+        <h2 className={styles.heading}>Was unsere Kunden sagen</h2>
         <p className={styles.subheading}>
-          Hear from businesses and individuals who have experienced the power of our solutions first-hand.
+          Hören Sie von Unternehmen und Einzelpersonen, die die Kraft unserer Lösungen aus erster Hand erfahren haben.
         </p>
         <div className={styles.grid}>
           {testimonialsData.map((testimonial, index) => (

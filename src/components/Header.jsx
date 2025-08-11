@@ -35,17 +35,17 @@ function Header() {
         <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="#features" className={styles.navLink} onClick={closeMenu}>Features</a>
+              <a href="#features" className={styles.navLink} onClick={closeMenu}>Produkte</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#testimonials" className={styles.navLink} onClick={closeMenu}>Testimonials</a>
+              <a href="#testimonials" className={styles.navLink} onClick={closeMenu}>Erfahrungsberichte</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#cta" className={styles.navLink} onClick={closeMenu}>Contact</a>
+              <a href="#cta" className={styles.navLink} onClick={closeMenu}>Kontakt</a>
             </li>
           </ul>
           <a href="#cta" className={`${styles.navCta} button button-primary`} onClick={closeMenu}>
-            Get Started
+            Kunde werden
           </a>
         </nav>
       </div>
