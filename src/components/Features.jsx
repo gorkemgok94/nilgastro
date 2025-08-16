@@ -1,5 +1,6 @@
 // src/components/Features.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
 
 // Placeholder icons (replace with actual SVG or image components)
@@ -13,31 +14,37 @@ const Icon6 = () => <svg  xmlns="http://www.w3.org/2000/svg"  width="48"  height
 
 const featuresData = [
   {
+    id: 'Getränke',
     icon: <Icon1 />,
     title: "Getränke",
     description: "Perfekt erfrischende Getränke – für heiß und kalt, ideal zu jeder Speise."
   },
   {
+    id: 'Verpackungen',
     icon: <Icon2 />,
     title: "Verpackungen",
     description: "Hochwertige Verpackungen – ideal für Ihr köstliches Essen."
   },
   {
+    id: 'Konserven',
     icon: <Icon3 />,
     title: "Konserven",
     description: "Frisch konserviert: Genuss garantiert!"
   },
   {
+    id: 'Tiefkühl',
     icon: <Icon4 />,
     title: "Tiefkühl",
     description: "Damit Sie jahrelang besten Genuss erleben können."
   },
   {
+    id: 'Mölkerei',
     icon: <Icon5 />,
     title: "Mölkerei",
     description: "Aus dem Herzen der Käsekultur Europas!"
   },
   {
+    id: 'Gemüse',
     icon: <Icon6 />,
     title: "Gemüse",
     description: "Frischste Auswahl lässt den Salatteller strahlen!"
@@ -54,9 +61,9 @@ function Features() {
         </p>
         <div className={styles.grid}>
           {featuresData.map((feature, index) => (
-            <div key={index} className={styles.featureCard}>
+            <div key={feature.id} className={styles.featureCard}>
               <div className={styles.iconWrapper}>{feature.icon}</div>
-              <h3 className={styles.cardTitle}>{feature.title}</h3>
+              <Link to={`/features/${feature.id}`}>{feature.title}</Link>
               <p className={styles.cardDescription}>{feature.description}</p>
             </div>
           ))}
