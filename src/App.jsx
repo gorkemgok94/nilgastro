@@ -3,7 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom'; 
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Features from './components/Features';
+import Features from './components/Products';
 import Testimonials from './components/Testimonials';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
