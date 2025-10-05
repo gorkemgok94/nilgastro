@@ -1,4 +1,5 @@
 /* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 /* --- CSS Reset & Base Styles --- */
 *,
@@ -52,7 +53,6 @@ body {
 }
 
 /* Optional: Import a font like Inter from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 /* --- Reusable Utility Classes --- */
 .container {

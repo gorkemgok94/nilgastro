@@ -1,5 +1,5 @@
 // src/components/Features.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
 
@@ -69,7 +69,17 @@ const productList = [
 ];
 
 function Products() {
-  const [cart, setCart] = React.useState([]);
+  //User name or address
+  const [name, setName] = React.useState("");
+
+  const [cart, setCart] = React.useState(() => {
+    const saved = localStorage.getItem('cart');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  React.useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product) => {
     setCart((prev) => [...prev, product]);
@@ -86,6 +96,20 @@ function Products() {
       return prev;
     });
   };
+
+  const handleOrder = async () => {
+  try {
+    const response = await fetch('https://always-be-there-for-you.onrender.com/api/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, cart }),
+    });
+    const data = await response.json();
+    alert(data.message); // Show confirmation
+  } catch (error) {
+    alert('Error sending order');
+  }
+};
 
   return (
     <section id="features" className={styles.features}>
@@ -123,11 +147,7 @@ function Products() {
             <p>Your cart is empty.</p>
           ) : (
             <ul>
-              {/* 
-                The problematic block has been removed.
-                The remaining code correctly maps the product counts 
-                (from the reduce function) into an array of <li> elements.
-              */}
+
               {Object.entries(
                 cart.reduce((acc, product) => {
                   acc[product] = (acc[product] || 0) + 1;
@@ -141,6 +161,20 @@ function Products() {
             </ul>
           )}
         </div>
+        <input
+          type="text"
+          placeholder="Ihr Name"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          className="order-name-input"
+        />
+        <button
+          className="order-button"
+          disabled={cart.length === 0 || !name.trim()}
+          onClick={handleOrder}
+        >
+          Bestellen
+        </button>
       </div>
     </section>
   );
