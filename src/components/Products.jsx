@@ -98,18 +98,18 @@ function Products() {
   };
 
   const handleOrder = async () => {
-  try {
-    const response = await fetch('https://always-be-there-for-you.onrender.com/api/order', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, cart }),
-    });
-    const data = await response.json();
-    alert(data.message); // Show confirmation
-  } catch (error) {
-    alert('Error sending order');
-  }
-};
+    try {
+      const response = await fetch('https://always-be-there-for-you.onrender.com/api/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, cart }),
+      });
+      const data = await response.json();
+      alert(data.message); // Show confirmation
+    } catch (error) {
+      alert('Error sending order');
+    }
+  };
 
   return (
     <section id="features" className={styles.features}>
@@ -128,53 +128,84 @@ function Products() {
           ))}
         </div>
       </div>
-      <div className='products.list'>
+      <div className={styles.productsList}>
         <h3>Products</h3>
-        <ul>
-          {productList.map((product, idx) => (
-            <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>{product}</span>
-              <button onClick={() => addToCart(product)} aria-label={`Add ${product}`}>+</button>
-              <button onClick={() => removeFromCart(product)} aria-label={`Remove ${product}`}>-</button>
-            </li>
-          ))}
+        <ul className={styles.productUl}>
+          {productList.map((product, idx) => {
+            // Zähle, wie oft das Produkt im Warenkorb ist
+            const quantity = cart.filter(item => item === product).length;
+            return (
+              <li key={idx} className={styles.productLi}>
+                <span className={styles.productName}>
+                  {product}
+                  {quantity > 0 && (
+                    <span style={{ marginLeft: '0.5rem', color: '#888', fontWeight: 400 }}>
+                      × {quantity}
+                    </span>
+                  )}
+                </span>
+                <div>
+                  <button
+                    className={styles.productBtn}
+                    onClick={() => addToCart(product)}
+                    aria-label={`Add ${product}`}
+                  >+</button>
+                  <button
+                    className={styles.productBtn}
+                    onClick={() => removeFromCart(product)}
+                    aria-label={`Remove ${product}`}
+                  >-</button>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
-      <div className='shopping-cart'>
-        <div className="cart">
-          <h3>Shopping Cart</h3>
+      <div className={styles.shoppingCart}>
+        <div className={styles.cartBox}>
+          <h3 className={styles.cartHeading}>Shopping Cart</h3>
           {cart.length === 0 ? (
-            <p>Your cart is empty.</p>
+            <p className={styles.cartEmpty}>Your cart is empty.</p>
           ) : (
-            <ul>
-
+            <ul className={styles.cartList}>
               {Object.entries(
                 cart.reduce((acc, product) => {
                   acc[product] = (acc[product] || 0) + 1;
                   return acc;
                 }, {})
               ).map(([product, quantity]) => (
-                <li key={product}>
-                  {product} &times; {quantity}
+                <li key={product} className={styles.cartItem}>
+                  <span className={styles.cartProduct}>{product}</span>
+                  <span className={styles.cartQuantity}>× {quantity}</span>
                 </li>
               ))}
             </ul>
           )}
         </div>
-        <input
-          type="text"
-          placeholder="Ihr Name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          className="order-name-input"
-        />
-        <button
-          className="order-button"
-          disabled={cart.length === 0 || !name.trim()}
-          onClick={handleOrder}
-        >
-          Bestellen
-        </button>
+        <div className={styles.cartActions}>
+          <input
+            type="text"
+            placeholder="Ihr Name"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            className={styles.orderNameInput}
+          />
+          <button
+            className={styles.orderButton}
+            disabled={cart.length === 0 || !name.trim()}
+            onClick={handleOrder}
+          >
+            Bestellen
+          </button>
+          <button
+            className={styles.clearButton}
+            disabled={cart.length === 0}
+            onClick={() => setCart([])}
+            style={{ marginLeft: 0, marginTop: '0.5rem', width: '100%' }}
+          >
+            Alles im Korb löschen
+          </button>
+        </div>
       </div>
     </section>
   );
