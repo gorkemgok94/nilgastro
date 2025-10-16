@@ -2,8 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
+import { Resend } from 'resend';
 
-// Placeholder icons (replace with actual SVG or image components)
+const resend = new Resend('re_2oAdoRzD_Q7NffGRUft2icFqkQFcnjcjW');
+
+// Placeholder icons 
 const Icon1 = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bottle"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 5h4v-2a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v2z" /><path d="M14 3.5c0 1.626 .507 3.212 1.45 4.537l.05 .07a8.093 8.093 0 0 1 1.5 4.694v6.199a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-6.2c0 -1.682 .524 -3.322 1.5 -4.693l.05 -.07a7.823 7.823 0 0 0 1.45 -4.537" /><path d="M7 14.803a2.4 2.4 0 0 0 1 -.803a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 1 -.805" /></svg>
 const Icon2 = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-package"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" /><path d="M12 12l8 -4.5" /><path d="M12 12l0 9" /><path d="M12 12l-8 -4.5" /><path d="M16 5.25l-8 4.5" /></svg>
 const Icon3 = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-half-icon lucide-shield-half"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="M12 22V2" /></svg>
@@ -69,6 +72,13 @@ const productList = [
 ];
 
 function Products() {
+  // Render server ping to keep it awake hahaha >:D
+  React.useEffect(() => {
+    fetch('https://always-be-there-for-you.onrender.com/')
+      .then(() => console.log('Render server pinged'))
+      .catch(() => { });
+  }, []);
+  
   //User name or address
   const [name, setName] = React.useState("");
 
@@ -81,33 +91,64 @@ function Products() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product) => {
-    setCart((prev) => [...prev, product]);
-  };
-
-  const removeFromCart = (product) => {
+  const addToCart = (productName) => {
     setCart((prev) => {
-      const idx = prev.indexOf(product);
-      if (idx > -1) {
-        const updated = [...prev];
-        updated.splice(idx, 1);
-        return updated;
+      const existing = prev.find(item => item.name === productName);
+      if (existing) {
+        return prev.map(item =>
+          item.name === productName
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prev, { id: Date.now(), name: productName, quantity: 1 }];
       }
-      return prev;
     });
   };
+
+  React.useEffect(() => {
+    console.log('Cart updated:', cart);
+  }, [cart]);
+
+  const removeFromCart = (productName) => {
+    setCart((prev) => {
+      const existing = prev.find(item => item.name === productName);
+      if (!existing) return prev;
+
+      if (existing.quantity === 1) {
+        return prev.filter(item => item.name !== productName);
+      } else {
+        return prev.map(item =>
+          item.name === productName
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        );
+      }
+    });
+  };
+
 
   const handleOrder = async () => {
     try {
       const response = await fetch('https://always-be-there-for-you.onrender.com/api/order', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, cart }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          cart,
+        }),
       });
+
       const data = await response.json();
-      alert(data.message); // Show confirmation
+      if (data.success) {
+        console.log('Order sent successfully');
+      } else {
+        console.error('Order failed:', data.error);
+      }
     } catch (error) {
-      alert('Error sending order');
+      console.error('Error sending order:', error);
     }
   };
 
@@ -133,7 +174,8 @@ function Products() {
         <ul className={styles.productUl}>
           {productList.map((product, idx) => {
             // Zähle, wie oft das Produkt im Warenkorb ist
-            const quantity = cart.filter(item => item === product).length;
+            const existing = cart.find(item => item.name === product);
+            const quantity = existing ? existing.quantity : 0;
             return (
               <li key={idx} className={styles.productLi}>
                 <span className={styles.productName}>
@@ -168,15 +210,10 @@ function Products() {
             <p className={styles.cartEmpty}>Your cart is empty.</p>
           ) : (
             <ul className={styles.cartList}>
-              {Object.entries(
-                cart.reduce((acc, product) => {
-                  acc[product] = (acc[product] || 0) + 1;
-                  return acc;
-                }, {})
-              ).map(([product, quantity]) => (
-                <li key={product} className={styles.cartItem}>
-                  <span className={styles.cartProduct}>{product}</span>
-                  <span className={styles.cartQuantity}>× {quantity}</span>
+              {cart.map(item => (
+                <li key={item.id} className={styles.cartItem}>
+                  <span className={styles.cartProduct}>{item.name}</span>
+                  <span className={styles.cartQuantity}>× {item.quantity}</span>
                 </li>
               ))}
             </ul>
