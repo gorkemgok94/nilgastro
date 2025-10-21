@@ -2,9 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
-import { Resend } from 'resend';
 
-const resend = new Resend('re_2oAdoRzD_Q7NffGRUft2icFqkQFcnjcjW');
 
 // Placeholder icons 
 const Icon1 = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bottle"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 5h4v-2a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v2z" /><path d="M14 3.5c0 1.626 .507 3.212 1.45 4.537l.05 .07a8.093 8.093 0 0 1 1.5 4.694v6.199a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-6.2c0 -1.682 .524 -3.322 1.5 -4.693l.05 -.07a7.823 7.823 0 0 0 1.45 -4.537" /><path d="M7 14.803a2.4 2.4 0 0 0 1 -.803a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 1 -.805" /></svg>
@@ -55,23 +53,80 @@ const featuresData = [
 ];
 
 const productList = [
-  "29x3",
-  "Su",
-  "alufolie",
-  "cola dose",
-  "dönertüte",
-  "mezzo dose",
-  "serviette",
-  "fanta dose",
-  "handtuch",
-  "sprite dose",
-  "karton to go 8 oz",
-  "pfirsich MEINT prisma",
-  "ip7",
-  "multi MEINT prisma"
+  "Dönerbox 26 oz (50 Stück)",
+  "Dönertüte braun",
+  "Tragetasche 45cm",
+  "Pizzakarton 32cm",
+  "Gabel Premium Stark",
+  "Papiertragetasche 26cm",
+  "Papiertragetasche 32cm",
+  "Haushaltsbox 500ml (50 Stück)",
+  "Haushaltsbox 1000ml (50 Stück)",
+  "Alufolie stark weiß",
+  "IP9 Lunchbox",
+  "Servietten",
+  "Handtuch",
+  "Menübox 2-teilig",
+  "Nuggets 1kg",
+  "Bon Falafel 800g",
+  "Pommes Ekin 6 mm 10kg",
+  "Spinat TK 2,5kg",
+  "Hamker Mayonnaise 10kg",
+  "Ketchup Eimer 10kg",
+  "Pizzasalami 1kg",
+  "Schinken geschnitten 1kg",
+  "Milram Edamer 40% circa 15kg",
+  "Joghurt Mavi 3,5% 10kg",
+  "Gazi Käse 55% 15kg",
+  "Sucuk Egetürk Kangal 1kg",
+  "Speisesalz 25kg",
+  "Peperoni Suntat Kanister",
+  "Pommesöl Frittierfett 10L",
+  "Sriracha Sauce Grün 1kg",
+  "Dill Gewürz Bon 1kg",
+  "Kale Chili Gewürz Feuerscharf 900g",
+  "Sumak Gewürz 1kg Beutel",
+  "Homann Ketchup zum mitnehmen",
+  "Homann Mayonnaise zum mitnehmen",
+  "Oliven Geschnitten im Dose",
+  "Knoblauchgranulat 1kg",
+  "Pizzasauce La Perla",
+  "Edelsüß gewürz 1kg",
+  "Mais klein in Dose",
+  "Coca Cola Zero 0,33L 24er Pack",
+  "Coca Cola 0,33L 24er Pack",
+  "Mezzo Mix 0,33L 24er Pack",
+  "Istanbul Gazoz 0,33L 24er Pack",
+  "Fanta 0,33L 24er Pack",
+  "Red Bull 0,25L 24er Pack",
+  "Klarsichtbecher 125ml 100 Stück",
+  "Deckel für Klarsichtbecher 125ml 100 Stück",
+  "Tetra Pfirsich 12er Pack",
+  "Tetra Zitrone 12er Pack",
+  "Tetra Wassermelone 12er Pack",
+  "Salgam Suyu Scharf Acı 24er Pack",
+  "Vio Medium 0,5L 18er Pack",
+  "Vio Still 0,5L 18er Pack",
+  "Mehl Degirmenci 25kg",
+  "Mehl Farina 10kg",
+  "Frische Kartoffeln 20kg",
+  "Karotten 10kg",
+  "Rote Zwiebeln 10kg",
+  "Eisbergsalat im Karton",
+  "Tomaten 6kg",
+  "Auberginen 4 kg Karton",
+  "Zucchini 4 kg Kiste",
+  "Rot Kraut im Sack",
+  "Rucola in Kiste",
+  "Gurken 4 kg Karton",
+  "Ayran Fresh 0,25L 20er Pack",
+  "Curry Ketchup 10kg",
+  "Pommessalzgewürz 1kg",
+  "Pizzagewürz 1kg",
 ];
 
 function Products() {
+  
   // Render server ping to keep it awake hahaha >:D
   React.useEffect(() => {
     fetch('https://always-be-there-for-you.onrender.com/')
@@ -81,6 +136,11 @@ function Products() {
   
   //User name or address
   const [name, setName] = React.useState("");
+  const [orderStatus, setOrderStatus] = React.useState({
+    loading: false,
+    success: false,
+    error: null
+  });
 
   const [cart, setCart] = React.useState(() => {
     const saved = localStorage.getItem('cart');
@@ -129,6 +189,8 @@ function Products() {
 
 
   const handleOrder = async () => {
+    setOrderStatus({ loading: true, success: false, error: null });
+    
     try {
       const response = await fetch('https://always-be-there-for-you.onrender.com/api/order', {
         method: 'POST',
@@ -143,12 +205,19 @@ function Products() {
 
       const data = await response.json();
       if (data.success) {
-        console.log('Order sent successfully');
+        setOrderStatus({ loading: false, success: true, error: null });
+        // Clear cart and name on success
+        setCart([]);
+        setName('');
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setOrderStatus({ loading: false, success: false, error: null });
+        }, 5000);
       } else {
-        console.error('Order failed:', data.error);
+        setOrderStatus({ loading: false, success: false, error: data.error || 'Order failed' });
       }
     } catch (error) {
-      console.error('Error sending order:', error);
+      setOrderStatus({ loading: false, success: false, error: 'Error sending order. Please try again.' });
     }
   };
 
@@ -227,12 +296,22 @@ function Products() {
             onChange={e => setName(e.target.value)}
             className={styles.orderNameInput}
           />
+          {orderStatus.error && (
+            <div className={styles.errorMessage}>
+              {orderStatus.error}
+            </div>
+          )}
+          {orderStatus.success && (
+            <div className={styles.successMessage}>
+              Bestellung erfolgreich aufgegeben! Vielen Dank.
+            </div>
+          )}
           <button
             className={styles.orderButton}
-            disabled={cart.length === 0 || !name.trim()}
+            disabled={cart.length === 0 || !name.trim() || orderStatus.loading}
             onClick={handleOrder}
           >
-            Bestellen
+            {orderStatus.loading ? 'Wird bearbeitet...' : 'Bestellen'}
           </button>
           <button
             className={styles.clearButton}

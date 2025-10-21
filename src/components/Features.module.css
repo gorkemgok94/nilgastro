@@ -226,3 +226,26 @@
   background: #f5b7b1;
   cursor: not-allowed;
 }
+
+.successMessage {
+  color: #4caf50;
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.errorMessage {
+  color: #f44336;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.orderButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
