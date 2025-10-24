@@ -1,0 +1,911 @@
+[
+  {
+    "id": "doenerbox-26oz-50",
+    "name": "Dönerbox 26 oz (50 Stück)",
+    "category": "Verpackungen",
+    "sku": "DB-26-50",
+    "unit": "Stück",
+    "pack": 50,
+    "tags": ["box", "takeaway", "döner"]
+  },
+  {
+    "id": "doenertuete-braun",
+    "name": "Dönertüte braun",
+    "category": "Verpackungen",
+    "sku": "DT-BR",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["tüte", "takeaway", "döner"]
+  },
+  {
+    "id": "tragetasche-45cm",
+    "name": "Tragetasche 45cm",
+    "category": "Verpackungen",
+    "sku": "TT-45",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["tasche", "takeaway"]
+  },
+  {
+    "id": "pizzakarton-32cm",
+    "name": "Pizzakarton 32cm",
+    "category": "Verpackungen",
+    "sku": "PK-32",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["karton", "pizza", "takeaway"]
+  },
+  {
+    "id": "gabel-premium-stark",
+    "name": "Gabel Premium Stark",
+    "category": "Besteck",
+    "sku": "GA-PREM",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["gabel", "besteck"]
+  },
+  {
+    "id": "papiertragetasche-26cm",
+    "name": "Papiertragetasche 26cm",
+    "category": "Verpackungen",
+    "sku": "PT-26",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["tasche", "papier", "takeaway"]
+  },
+  {
+    "id": "papiertragetasche-32cm",
+    "name": "Papiertragetasche 32cm",
+    "category": "Verpackungen",
+    "sku": "PT-32",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["tasche", "papier", "takeaway"]
+  },
+  {
+    "id": "haushaltsbox-500ml-50",
+    "name": "Haushaltsbox 500ml (50 Stück)",
+    "category": "Verpackungen",
+    "sku": "HB-500-50",
+    "unit": "Stück",
+    "pack": 50,
+    "tags": ["box", "haushalt"]
+  },
+  {
+    "id": "haushaltsbox-1000ml-50",
+    "name": "Haushaltsbox 1000ml (50 Stück)",
+    "category": "Verpackungen",
+    "sku": "HB-1000-50",
+    "unit": "Stück",
+    "pack": 50,
+    "tags": ["box", "haushalt"]
+  },
+  {
+    "id": "alufolie-stark-weiss",
+    "name": "Alufolie stark weiß",
+    "category": "Küchenbedarf",
+    "sku": "AF-ST-W",
+    "unit": "Rolle",
+    "pack": 1,
+    "tags": ["alufolie", "küche"]
+  },
+  {
+    "id": "ip9-lunchbox",
+    "name": "IP9 Lunchbox",
+    "category": "Verpackungen",
+    "sku": "IP9-LB",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["box", "lunch", "takeaway"]
+  },
+  {
+    "id": "servietten",
+    "name": "Servietten",
+    "category": "Hygiene",
+    "sku": "SERV",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["servietten", "hygiene"]
+  },
+  {
+    "id": "handtuch",
+    "name": "Handtuch",
+    "category": "Hygiene",
+    "sku": "HAND",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["handtuch", "hygiene"]
+  },
+  {
+    "id": "menuebox-2-teilig",
+    "name": "Menübox 2-teilig",
+    "category": "Verpackungen",
+    "sku": "MB-2T",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["box", "menü", "takeaway"]
+  },
+  {
+    "id": "nuggets-1kg",
+    "name": "Nuggets 1kg",
+    "category": "Tiefkühl",
+    "sku": "NUG-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["nuggets", "tiefkühl", "fleisch"]
+  },
+  {
+    "id": "bon-falafel-800g",
+    "name": "Bon Falafel 800g",
+    "category": "Tiefkühl",
+    "sku": "BF-800",
+    "unit": "g",
+    "pack": 800,
+    "tags": ["falafel", "tiefkühl", "vegetarisch"]
+  },
+  {
+    "id": "pommes-ekin-6mm-10kg",
+    "name": "Pommes Ekin 6 mm 10kg",
+    "category": "Tiefkühl",
+    "sku": "PE-6-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["pommes", "tiefkühl"]
+  },
+  {
+    "id": "spinat-tk-2-5kg",
+    "name": "Spinat TK 2,5kg",
+    "category": "Tiefkühl",
+    "sku": "SP-TK-2.5",
+    "unit": "kg",
+    "pack": 2.5,
+    "tags": ["spinat", "tiefkühl", "gemüse"]
+  },
+  {
+    "id": "hamker-mayonnaise-10kg",
+    "name": "Hamker Mayonnaise 10kg",
+    "category": "Saucen",
+    "sku": "HM-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["mayonnaise", "sauce", "hamker"]
+  },
+  {
+    "id": "ketchup-eimer-10kg",
+    "name": "Ketchup Eimer 10kg",
+    "category": "Saucen",
+    "sku": "KE-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["ketchup", "sauce"]
+  },
+  {
+    "id": "pizzasalami-1kg",
+    "name": "Pizzasalami 1kg",
+    "category": "Wurstwaren",
+    "sku": "PS-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["salami", "pizza", "wurst"]
+  },
+  {
+    "id": "schinken-geschnitten-1kg",
+    "name": "Schinken geschnitten 1kg",
+    "category": "Wurstwaren",
+    "sku": "SG-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["schinken", "wurst"]
+  },
+  {
+    "id": "milram-edamer-40-15kg",
+    "name": "Milram Edamer 40% circa 15kg",
+    "category": "Käse",
+    "sku": "ME-40-15",
+    "unit": "kg",
+    "pack": 15,
+    "tags": ["edamer", "käse", "milram"]
+  },
+  {
+    "id": "joghurt-mavi-3-5-10kg",
+    "name": "Joghurt Mavi 3,5% 10kg",
+    "category": "Milchprodukte",
+    "sku": "JM-3.5-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["joghurt", "milch", "mavi"]
+  },
+  {
+    "id": "gazi-kaese-55-15kg",
+    "name": "Gazi Käse 55% 15kg",
+    "category": "Käse",
+    "sku": "GK-55-15",
+    "unit": "kg",
+    "pack": 15,
+    "tags": ["käse", "gazi"]
+  },
+  {
+    "id": "sucuk-egetuerk-kangal-1kg",
+    "name": "Sucuk Egetürk Kangal 1kg",
+    "category": "Wurstwaren",
+    "sku": "SEK-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["sucuk", "wurst", "egetürk"]
+  },
+  {
+    "id": "speisesalz-25kg",
+    "name": "Speisesalz 25kg",
+    "category": "Gewürze",
+    "sku": "SS-25",
+    "unit": "kg",
+    "pack": 25,
+    "tags": ["salz", "gewürz"]
+  },
+  {
+    "id": "peperoni-suntat-kanister",
+    "name": "Peperoni Suntat Kanister",
+    "category": "Konserven",
+    "sku": "PSK",
+    "unit": "Kanister",
+    "pack": 1,
+    "tags": ["peperoni", "konserven", "suntat"]
+  },
+  {
+    "id": "pommesoel-frittierfett-10l",
+    "name": "Pommesöl Frittierfett 10L",
+    "category": "Öle & Fette",
+    "sku": "PF-10",
+    "unit": "L",
+    "pack": 10,
+    "tags": ["öl", "fett", "frittieren"]
+  },
+  {
+    "id": "sriracha-sauce-gruen-1kg",
+    "name": "Sriracha Sauce Grün 1kg",
+    "category": "Saucen",
+    "sku": "SSG-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["sriracha", "sauce", "scharf"]
+  },
+  {
+    "id": "dill-gewuerz-bon-1kg",
+    "name": "Dill Gewürz Bon 1kg",
+    "category": "Gewürze",
+    "sku": "DGB-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["dill", "gewürz", "bon"]
+  },
+  {
+    "id": "kale-chili-gewuerz-feuerscharf-900g",
+    "name": "Kale Chili Gewürz Feuerscharf 900g",
+    "category": "Gewürze",
+    "sku": "KCGF-900",
+    "unit": "g",
+    "pack": 900,
+    "tags": ["chili", "gewürz", "scharf", "kale"]
+  },
+  {
+    "id": "sumak-gewuerz-1kg-beutel",
+    "name": "Sumak Gewürz 1kg Beutel",
+    "category": "Gewürze",
+    "sku": "SG-1B",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["sumak", "gewürz"]
+  },
+  {
+    "id": "homann-ketchup-zum-mitnehmen",
+    "name": "Homann Ketchup zum mitnehmen",
+    "category": "Saucen",
+    "sku": "HK-ZM",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["ketchup", "sauce", "homann", "togo"]
+  },
+  {
+    "id": "homann-mayonnaise-zum-mitnehmen",
+    "name": "Homann Mayonnaise zum mitnehmen",
+    "category": "Saucen",
+    "sku": "HM-ZM",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["mayonnaise", "sauce", "homann", "togo"]
+  },
+  {
+    "id": "oliven-geschnitten-im-dose",
+    "name": "Oliven Geschnitten im Dose",
+    "category": "Konserven",
+    "sku": "OG-D",
+    "unit": "Dose",
+    "pack": 1,
+    "tags": ["oliven", "konserven"]
+  },
+  {
+    "id": "knoblauchgranulat-1kg",
+    "name": "Knoblauchgranulat 1kg",
+    "category": "Gewürze",
+    "sku": "KG-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["knoblauch", "gewürz", "granulat"]
+  },
+  {
+    "id": "pizzasauce-la-perla",
+    "name": "Pizzasauce La Perla",
+    "category": "Saucen",
+    "sku": "PS-LP",
+    "unit": "Dose",
+    "pack": 1,
+    "tags": ["pizzasauce", "sauce", "la perla"]
+  },
+  {
+    "id": "edelsuess-gewuerz-1kg",
+    "name": "Edelsüß gewürz 1kg",
+    "category": "Gewürze",
+    "sku": "EG-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["edelsüß", "gewürz", "paprika"]
+  },
+  {
+    "id": "mais-klein-in-dose",
+    "name": "Mais klein in Dose",
+    "category": "Konserven",
+    "sku": "MK-D",
+    "unit": "Dose",
+    "pack": 1,
+    "tags": ["mais", "konserven"]
+  },
+  {
+    "id": "coca-cola-zero-0-33l-24er-pack",
+    "name": "Coca Cola Zero 0,33L 24er Pack",
+    "category": "Getränke",
+    "sku": "CCZ-0.33-24",
+    "unit": "Pack",
+    "pack": 24,
+    "tags": ["coca-cola", "zero", "getränk", "softdrink"]
+  },
+  {
+    "id": "coca-cola-0-33l-24er-pack",
+    "name": "Coca Cola 0,33L 24er Pack",
+    "category": "Getränke",
+    "sku": "CC-0.33-24",
+    "unit": "Pack",
+    "pack": 24,
+    "tags": ["coca-cola", "getränk", "softdrink"]
+  },
+  {
+    "id": "mezzo-mix-0-33l-24er-pack",
+    "name": "Mezzo Mix 0,33L 24er Pack",
+    "category": "Getränke",
+    "sku": "MM-0.33-24",
+    "unit": "Pack",
+    "pack": 24,
+    "tags": ["mezzo-mix", "getränk", "softdrink"]
+  },
+  {
+    "id": "istanbul-gazoz-0-33l-24er-pack",
+    "name": "Istanbul Gazoz 0,33L 24er Pack",
+    "category": "Getränke",
+    "sku": "IG-0.33-24",
+    "unit": "Pack",
+    "pack": 24,
+    "tags": ["istanbul", "gazoz", "getränk", "softdrink"]
+  },
+  {
+    "id": "fanta-0-33l-24er-pack",
+    "name": "Fanta 0,33L 24er Pack",
+    "category": "Getränke",
+    "sku": "FA-0.33-24",
+    "unit": "Pack",
+    "pack": 24,
+    "tags": ["fanta", "getränk", "softdrink"]
+  },
+  {
+    "id": "red-bull-0-25l-24er-pack",
+    "name": "Red Bull 0,25L 24er Pack",
+    "category": "Getränke",
+    "sku": "RB-0.25-24",
+    "unit": "Pack",
+    "pack": 24,
+    "tags": ["red-bull", "getränk", "energydrink"]
+  },
+  {
+    "id": "klarsichtbecher-125ml-100-stueck",
+    "name": "Klarsichtbecher 125ml 100 Stück",
+    "category": "Verpackungen",
+    "sku": "KB-125-100",
+    "unit": "Stück",
+    "pack": 100,
+    "tags": ["becher", "plastik", "einweg"]
+  },
+  {
+    "id": "deckel-fuer-klarsichtbecher-125ml-100-stueck",
+    "name": "Deckel für Klarsichtbecher 125ml 100 Stück",
+    "category": "Verpackungen",
+    "sku": "DKB-125-100",
+    "unit": "Stück",
+    "pack": 100,
+    "tags": ["deckel", "plastik", "einweg"]
+  },
+  {
+    "id": "tetra-pfirsich-12er-pack",
+    "name": "Tetra Pfirsich 12er Pack",
+    "category": "Getränke",
+    "sku": "TP-12",
+    "unit": "Pack",
+    "pack": 12,
+    "tags": ["eistee", "pfirsich", "getränk"]
+  },
+  {
+    "id": "tetra-zitrone-12er-pack",
+    "name": "Tetra Zitrone 12er Pack",
+    "category": "Getränke",
+    "sku": "TZ-12",
+    "unit": "Pack",
+    "pack": 12,
+    "tags": ["eistee", "zitrone", "getränk"]
+  },
+  {
+    "id": "tetra-wassermelone-12er-pack",
+    "name": "Tetra Wassermelone 12er Pack",
+    "category": "Getränke",
+    "sku": "TW-12",
+    "unit": "Pack",
+    "pack": 12,
+    "tags": ["eistee", "wassermelone", "getränk"]
+  },
+  {
+    "id": "salgam-suyu-scharf-aci-24er-pack",
+    "name": "Salgam Suyu Scharf Acı 24er Pack",
+    "category": "Getränke",
+    "sku": "SSA-24",
+    "unit": "Pack",
+    "pack": 24,
+    "tags": ["salgam", "getränk", "türkisch"]
+  },
+  {
+    "id": "vio-medium-0-5l-18er-pack",
+    "name": "Vio Medium 0,5L 18er Pack",
+    "category": "Getränke",
+    "sku": "VM-0.5-18",
+    "unit": "Pack",
+    "pack": 18,
+    "tags": ["wasser", "vio", "medium"]
+  },
+  {
+    "id": "vio-still-0-5l-18er-pack",
+    "name": "Vio Still 0,5L 18er Pack",
+    "category": "Getränke",
+    "sku": "VS-0.5-18",
+    "unit": "Pack",
+    "pack": 18,
+    "tags": ["wasser", "vio", "still"]
+  },
+  {
+    "id": "mehl-degirmenci-25kg",
+    "name": "Mehl Degirmenci 25kg",
+    "category": "Backwaren",
+    "sku": "MD-25",
+    "unit": "kg",
+    "pack": 25,
+    "tags": ["mehl", "backen", "degirmenci"]
+  },
+  {
+    "id": "mehl-farina-10kg",
+    "name": "Mehl Farina 10kg",
+    "category": "Backwaren",
+    "sku": "MF-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["mehl", "backen", "farina"]
+  },
+  {
+    "id": "frische-kartoffeln-20kg",
+    "name": "Frische Kartoffeln 20kg",
+    "category": "Frischwaren",
+    "sku": "FK-20",
+    "unit": "kg",
+    "pack": 20,
+    "tags": ["kartoffeln", "frisch", "gemüse"]
+  },
+  {
+    "id": "karotten-10kg",
+    "name": "Karotten 10kg",
+    "category": "Frischwaren",
+    "sku": "KA-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["karotten", "frisch", "gemüse"]
+  },
+  {
+    "id": "rote-zwiebeln-10kg",
+    "name": "Rote Zwiebeln 10kg",
+    "category": "Frischwaren",
+    "sku": "RZ-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["zwiebeln", "frisch", "gemüse"]
+  },
+  {
+    "id": "eisbergsalat-im-karton",
+    "name": "Eisbergsalat im Karton",
+    "category": "Frischwaren",
+    "sku": "ES-K",
+    "unit": "Karton",
+    "pack": 1,
+    "tags": ["salat", "frisch", "gemüse"]
+  },
+  {
+    "id": "tomaten-6kg",
+    "name": "Tomaten 6kg",
+    "category": "Frischwaren",
+    "sku": "TO-6",
+    "unit": "kg",
+    "pack": 6,
+    "tags": ["tomaten", "frisch", "gemüse"]
+  },
+  {
+    "id": "auberginen-4-kg-karton",
+    "name": "Auberginen 4 kg Karton",
+    "category": "Frischwaren",
+    "sku": "AU-4K",
+    "unit": "Karton",
+    "pack": 4,
+    "tags": ["auberginen", "frisch", "gemüse"]
+  },
+  {
+    "id": "zucchini-4-kg-kiste",
+    "name": "Zucchini 4 kg Kiste",
+    "category": "Frischwaren",
+    "sku": "ZU-4K",
+    "unit": "Kiste",
+    "pack": 4,
+    "tags": ["zucchini", "frisch", "gemüse"]
+  },
+  {
+    "id": "rot-kraut-im-sack",
+    "name": "Rot Kraut im Sack",
+    "category": "Frischwaren",
+    "sku": "RK-S",
+    "unit": "Sack",
+    "pack": 1,
+    "tags": ["rotkohl", "frisch", "gemüse"]
+  },
+  {
+    "id": "rucola-in-kiste",
+    "name": "Rucola in Kiste",
+    "category": "Frischwaren",
+    "sku": "RU-K",
+    "unit": "Kiste",
+    "pack": 1,
+    "tags": ["rucola", "salat", "frisch"]
+  },
+  {
+    "id": "gurken-4-kg-karton",
+    "name": "Gurken 4 kg Karton",
+    "category": "Frischwaren",
+    "sku": "GU-4K",
+    "unit": "Karton",
+    "pack": 4,
+    "tags": ["gurken", "frisch", "gemüse"]
+  },
+  {
+    "id": "ayran-fresh-0-25l-20er-pack",
+    "name": "Ayran Fresh 0,25L 20er Pack",
+    "category": "Getränke",
+    "sku": "AF-0.25-20",
+    "unit": "Pack",
+    "pack": 20,
+    "tags": ["ayran", "getränk", "milch"]
+  },
+  {
+    "id": "curry-ketchup-10kg",
+    "name": "Curry Ketchup 10kg",
+    "category": "Saucen",
+    "sku": "CK-10",
+    "unit": "kg",
+    "pack": 10,
+    "tags": ["curry", "ketchup", "sauce"]
+  },
+  {
+    "id": "pommessalzgewuerz-1kg",
+    "name": "Pommessalzgewürz 1kg",
+    "category": "Gewürze",
+    "sku": "PSG-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["pommes", "salz", "gewürz"]
+  },
+  {
+    "id": "pizzagewuerz-1kg",
+    "name": "Pizzagewürz 1kg",
+    "category": "Gewürze",
+    "sku": "PG-1",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["pizza", "gewürz"]
+  },
+  {
+    "id": "3334",
+    "name": "Treviso Pizzabox 29x29x3 cm TBMK, Pck. 100 Stk.",
+    "category": "Verpackungen",
+    "sku": "PIZZABOX-3334",
+    "unit": "Stück",
+    "pack": 100,
+    "tags": ["pizza", "box", "verpackung", "treviso"]
+  },
+  {
+    "id": "3734",
+    "name": "fodripa Alufolie 29 cm 11 u 1200 gr",
+    "category": "Küchenbedarf",
+    "sku": "ALUFOLIE-3734",
+    "unit": "Rolle",
+    "pack": 1,
+    "tags": ["alufolie", "küchenbedarf", "fodripa"]
+  },
+  {
+    "id": "4893",
+    "name": "Ulas Pommes Premium 9-9 mm TK",
+    "category": "Tiefkühlprodukte",
+    "sku": "POMMES-4893",
+    "unit": "Beutel",
+    "pack": 1,
+    "tags": ["pommes", "tiefkühl", "ulas", "tk"]
+  },
+  {
+    "id": "2204",
+    "name": "IP 6 Hamburgerbox gross, Pck. 125 Stk.",
+    "category": "Verpackungen",
+    "sku": "HAMBURGERBOX-2204",
+    "unit": "Stück",
+    "pack": 125,
+    "tags": ["hamburger", "box", "verpackung", "ip"]
+  },
+  {
+    "id": "2006",
+    "name": "Gazi Helim Käse 45% i. Tr. Grill & Pfanne, Pck. 250 gr",
+    "category": "Molkereiprodukte",
+    "sku": "KAESE-2006",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["käse", "helim", "gazi", "grillkäse"]
+  },
+  {
+    "id": "2508",
+    "name": "Milram Edamer Käse 40% Fett i. Tr., ca. 16 kg",
+    "category": "Molkereiprodukte",
+    "sku": "KAESE-2508",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["käse", "edamer", "milram"]
+  },
+  {
+    "id": "2788",
+    "name": "Rindersalami geschnitten d.80 mm, Pck. 1 kg",
+    "category": "Wurstwaren",
+    "sku": "SALAMI-2788",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["salami", "rind", "wurst"]
+  },
+  {
+    "id": "3846",
+    "name": "Mavi Joghurt 3,8% stichfest 10 kg",
+    "category": "Molkereiprodukte",
+    "sku": "JOGHURT-3846",
+    "unit": "Eimer",
+    "pack": 1,
+    "tags": ["joghurt", "mavi", "molkereiprodukte"]
+  },
+  {
+    "id": "2327",
+    "name": "KT Mayonnaise 50%, Eim. 10 kg",
+    "category": "Saucen & Dressings",
+    "sku": "MAYO-2327",
+    "unit": "Eimer",
+    "pack": 1,
+    "tags": ["mayonnaise", "sauce", "kt"]
+  },
+  {
+    "id": "3740",
+    "name": "Bon Peperoni Nr.1/5-9 cm (ATG 6 kg)",
+    "category": "Konserven",
+    "sku": "PEPERONI-3740",
+    "unit": "Dose",
+    "pack": 1,
+    "tags": ["peperoni", "konserven", "bon"]
+  },
+  {
+    "id": "1470",
+    "name": "Cristaline Quellwasser (EW) DPG PET-Flaschen, 24x0,5 L",
+    "category": "Getränke",
+    "sku": "WASSER-1470",
+    "unit": "Tray",
+    "pack": 24,
+    "tags": ["wasser", "cristaline", "getränke", "pet"]
+  },
+  {
+    "id": "450",
+    "name": "Pfand DPG 24x0,25€",
+    "category": "Pfand",
+    "sku": "PFAND-450",
+    "unit": "Stück",
+    "pack": 24,
+    "tags": ["pfand", "dpg", "einweg"]
+  },
+  {
+    "id": "1404",
+    "name": "Coca-Cola (EW) DPG Dosen, 24x0,33 L",
+    "category": "Getränke",
+    "sku": "COLA-1404",
+    "unit": "Tray",
+    "pack": 24,
+    "tags": ["coca-cola", "cola", "getränke", "dosen"]
+  },
+  {
+    "id": "2490",
+    "name": "Mezzo-Mix (EW) DPG Dosen, 24x0,33 L",
+    "category": "Getränke",
+    "sku": "MEZZOMIX-2490",
+    "unit": "Tray",
+    "pack": 24,
+    "tags": ["mezzo-mix", "getränke", "dosen"]
+  },
+  {
+    "id": "1655",
+    "name": "Fanta Orange (EW) DPG Dosen, 24x0,33 L",
+    "category": "Getränke",
+    "sku": "FANTA-1655",
+    "unit": "Tray",
+    "pack": 24,
+    "tags": ["fanta", "orange", "getränke", "dosen"]
+  },
+  {
+    "id": "2975",
+    "name": "Sprite (EW) DPG Dosen, 24x0,33 L",
+    "category": "Getränke",
+    "sku": "SPRITE-2975",
+    "unit": "Tray",
+    "pack": 24,
+    "tags": ["sprite", "getränke", "dosen"]
+  },
+  {
+    "id": "2473",
+    "name": "mein T Eistee Sortiment Prisma, Tetra 0,5 L",
+    "category": "Getränke",
+    "sku": "EISTEE-2473",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["eistee", "getränke", "tetra"]
+  },
+  {
+    "id": "1656",
+    "name": "Fanta Orange (EW) DPG PET-Flaschen, 12x0,5 L",
+    "category": "Getränke",
+    "sku": "FANTA-1656",
+    "unit": "Tray",
+    "pack": 12,
+    "tags": ["fanta", "orange", "getränke", "pet"]
+  },
+  {
+    "id": "452",
+    "name": "Pfand DPG 3,00€ (12x0,25€)",
+    "category": "Pfand",
+    "sku": "PFAND-452",
+    "unit": "Stück",
+    "pack": 12,
+    "tags": ["pfand", "dpg", "einweg"]
+  },
+  {
+    "id": "1422",
+    "name": "Coca-Cola Zero (EW) DPG PET-Flaschen, 12x0,5 L",
+    "category": "Getränke",
+    "sku": "COLA-ZERO-1422",
+    "unit": "Tray",
+    "pack": 12,
+    "tags": ["coca-cola", "zero", "getränke", "pet"]
+  },
+  {
+    "id": "1407",
+    "name": "Coca-Cola (MW) Glasflaschen, 24x0,33 L",
+    "category": "Getränke",
+    "sku": "COLA-MW-1407",
+    "unit": "Kasten",
+    "pack": 24,
+    "tags": ["coca-cola", "cola", "getränke", "glas", "mehrweg"]
+  },
+  {
+    "id": "461",
+    "name": "Pfand 5,10€ (24x0,15€+1,50€ Kasten)",
+    "category": "Pfand",
+    "sku": "PFAND-461",
+    "unit": "Kasten",
+    "pack": 1,
+    "tags": ["pfand", "mehrweg", "kasten"]
+  },
+  {
+    "id": "2493",
+    "name": "Mezzo-Mix (MW) Glasflaschen, 24x0,33 L",
+    "category": "Getränke",
+    "sku": "MEZZOMIX-MW-2493",
+    "unit": "Kasten",
+    "pack": 24,
+    "tags": ["mezzo-mix", "getränke", "glas", "mehrweg"]
+  },
+  {
+    "id": "1941",
+    "name": "Frische Rote Zwiebeln, kg",
+    "category": "Obst & Gemüse",
+    "sku": "ZWIEBELN-1941",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["zwiebeln", "rot", "gemüse", "frisch"]
+  },
+  {
+    "id": "1943",
+    "name": "Frische Rotkohl, kg",
+    "category": "Obst & Gemüse",
+    "sku": "ROTKOHL-1943",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["rotkohl", "kohl", "gemüse", "frisch"]
+  },
+  {
+    "id": "1858",
+    "name": "Frische Eisbergsalat, Stk.",
+    "category": "Obst & Gemüse",
+    "sku": "SALAT-1858",
+    "unit": "Stück",
+    "pack": 1,
+    "tags": ["eisbergsalat", "salat", "gemüse", "frisch"]
+  },
+  {
+    "id": "1863",
+    "name": "Frische Fleischtomaten i. Pfand Kiste, kg",
+    "category": "Obst & Gemüse",
+    "sku": "TOMATEN-1863",
+    "unit": "kg",
+    "pack": 1,
+    "tags": ["tomaten", "fleischtomaten", "gemüse", "frisch"]
+  },
+  {
+    "id": "483",
+    "name": "Pfand E2-Kiste",
+    "category": "Pfand",
+    "sku": "PFAND-483",
+    "unit": "Kiste",
+    "pack": 1,
+    "tags": ["pfand", "kiste", "e2"]
+  },
+  {
+    "id": "1814",
+    "name": "Fresh Ayran Becher, Be. 0,25 L",
+    "category": "Molkereiprodukte",
+    "sku": "AYRAN-1814",
+    "unit": "Becher",
+    "pack": 1,
+    "tags": ["ayran", "getränke", "molkereiprodukte"]
+  },
+  {
+    "id": "2787",
+    "name": "Rettenmeier Weizenmehl Typ.405, Sack 25 kg",
+    "category": "Trockensortiment",
+    "sku": "MEHL-2787",
+    "unit": "Sack",
+    "pack": 1,
+    "tags": ["mehl", "weizenmehl", "backzutaten"]
+  },
+  {
+    "id": "2074",
+    "name": "Gewürz Speisesalz (Tuz), Sack 25 kg",
+    "category": "Trockensortiment",
+    "sku": "SALZ-2074",
+    "unit": "Sack",
+    "pack": 1,
+    "tags": ["salz", "speisesalz", "gewürz"]
+  }
+]
