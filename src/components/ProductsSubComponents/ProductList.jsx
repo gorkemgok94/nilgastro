@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import styles from './ProductsList.module.css'; // We'll create this CSS file next
+import styles from './ProductsList.module.css';
 
 const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
   // State to keep track of the currently open category
@@ -53,11 +53,18 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
               <ul className={styles.productUl}>
                 {groupedProducts[category].map((product) => {
                   // Find this product in the cart to display its quantity
-                  const cartItem = cart.find(item => item.id === product.id);
+                  const cartItem = cart.find(item => item.name === product.name);
                   const quantity = cartItem ? cartItem.quantity : 0;
 
                   return (
                     <li key={product.id} className={styles.productLi}>
+                      {product.imageSrc && (
+                        <img
+                          src={product.imageSrc}
+                          alt={product.name}
+                          className={styles.productImage}
+                        />
+                      )}
                       <span className={styles.productName}>
                         {product.name}
                         {quantity > 0 && (
@@ -69,7 +76,7 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
                       <div className={styles.buttonGroup}>
                         <button
                           className={styles.productBtn}
-                          onClick={() => onAddToCart(product.name)} // Pass the whole product object
+                          onClick={() => onAddToCart(product.name)}
                           aria-label={`Add ${product.name}`}
                         >
                           +

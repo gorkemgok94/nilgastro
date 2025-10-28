@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import styles from './Features.module.css';
 import ProductList from './ProductsSubComponents/ProductList.jsx';
 import jsPDF from 'jspdf';
+import useCart from '../hooks/useCart.js';
+import useOrder from '../hooks/useOrder.js';
 
 // Placeholder icons 
 const Icon1 = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-bottle"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 5h4v-2a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v2z" /><path d="M14 3.5c0 1.626 .507 3.212 1.45 4.537l.05 .07a8.093 8.093 0 0 1 1.5 4.694v6.199a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-6.2c0 -1.682 .524 -3.322 1.5 -4.693l.05 -.07a7.823 7.823 0 0 0 1.45 -4.537" /><path d="M7 14.803a2.4 2.4 0 0 0 1 -.803a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 1 -.805" /></svg>
@@ -56,6 +58,8 @@ const featuresData = [
 
 function Products() {
 
+  const { cart, addToCart, removeFromCart, setCart } = useCart();
+  const { orderStatus, setOrderStatus, generateAndDownloadPDF } = useOrder();
   // Render server ping to keep it awake hahaha >:D
   React.useEffect(() => {
     fetch('https://always-be-there-for-you.onrender.com/')
@@ -65,19 +69,10 @@ function Products() {
 
   //User name or address
   const [name, setName] = React.useState("");
-
+  const [address, setAddress] = React.useState("");
   const [products, setProducts] = useState([]);
+  
 
-  const [orderStatus, setOrderStatus] = React.useState({
-    loading: false,
-    success: false,
-    error: null
-  });
-
-  const [cart, setCart] = React.useState(() => {
-    const saved = localStorage.getItem('cart');
-    return saved ? JSON.parse(saved) : [];
-  });
 
   useEffect(() => {
     const controller = new AbortController();
@@ -96,94 +91,9 @@ function Products() {
     };
   }, []);
 
-
-
-  React.useEffect(() => {
-    const handle = setTimeout(() => {
-      try {
-        localStorage.setItem('cart', JSON.stringify(cart));
-      } catch (e) {
-        console.error('Failed to save cart', e);
-      }
-    }, 600);
-
-    return () => clearTimeout(handle);
-  }, [cart]);
-
-
-  const addToCart = (productName) => {
-    setCart((prev) => {
-      const existing = prev.find(item => item.name === productName);
-      if (existing) {
-        return prev.map(item =>
-          item.name === productName
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        return [...prev, { id: Date.now(), name: productName, quantity: 1 }];
-      }
-    });
-  };
-
   React.useEffect(() => {
     console.log('Cart updated:', cart);
   }, [cart]);
-
-  const removeFromCart = (productName) => {
-    setCart((prev) => {
-      const existing = prev.find(item => item.name === productName);
-      if (!existing) return prev;
-
-      if (existing.quantity === 1) {
-        return prev.filter(item => item.name !== productName);
-      } else {
-        return prev.map(item =>
-          item.name === productName
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        );
-      }
-    });
-  };
-
-  // Generate PDF order confirmation
-  const generateAndDownloadPDF = (orderName, orderCart) => {
-    const doc = new jsPDF();
-    const date = new Date().toLocaleDateString('de-DE');
-
-    // Add header
-    doc.setFontSize(20);
-    doc.text("Bestellbestätigung", 10, 20);
-
-    // Add order details
-    doc.setFontSize(12);
-    doc.text(`Kunde: ${orderName}`, 10, 30);
-    doc.text(`Datum: ${date}`, 10, 37);
-
-    // Add a line separator
-    doc.setLineWidth(0.5);
-    doc.line(10, 42, 200, 42);
-
-    // Add cart items
-    doc.setFontSize(14);
-    doc.text("Bestellte Produkte:", 10, 50);
-
-    let yPosition = 60;
-    doc.setFontSize(11);
-    orderCart.forEach(item => {
-      doc.text(`${item.quantity} x ${item.name}`, 15, yPosition);
-      yPosition += 7; // Move down for the next item
-    });
-
-    // Add a footer message
-    doc.setFontSize(10);
-    doc.setTextColor(150);
-    doc.text("Vielen Dank für Ihre Bestellung!", 10, yPosition + 10);
-
-    // Save the PDF
-    doc.save(`bestellung-${orderName.replace(/\s/g, '_')}-${date}.pdf`);
-  };
 
 
   const handleOrder = async () => {
@@ -198,6 +108,7 @@ function Products() {
         body: JSON.stringify({
           name,
           cart,
+          address
         }),
       });
 
@@ -225,6 +136,7 @@ function Products() {
 
   return (
     <section id="features" className={styles.features}>
+      {/*
       <div className={`${styles.container} container`}>
         <h2 className={styles.heading}>Produkte</h2>
         <p className={styles.subheading}>
@@ -239,7 +151,8 @@ function Products() {
             </div>
           ))}
         </div>
-      </div>
+      </div>  
+      */}
 
       <ProductList
         products={products}
@@ -270,6 +183,13 @@ function Products() {
             placeholder="Ihr Name"
             value={name}
             onChange={e => setName(e.target.value)}
+            className={styles.orderNameInput}
+          />
+          <input
+            type='text'
+            placeholder="Ihre Adresse"
+            value={address}
+            onChange={e => setAddress(e.target.value)}
             className={styles.orderNameInput}
           />
           {orderStatus.error && (
