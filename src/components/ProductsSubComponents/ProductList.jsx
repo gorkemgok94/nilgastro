@@ -24,6 +24,10 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
   const handleToggleCategory = (category) => {
     // If the clicked category is already open, close it. Otherwise, open it.
     setOpenCategory(openCategory === category ? null : category);
+    requestAnimationFrame(() => {
+      document.getElementById(category)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
   };
 
   // Get the keys (category names) to iterate over
@@ -39,8 +43,10 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
             {/* Category Header Button */}
             <button
               className={styles.categoryHeader}
-              onClick={() => handleToggleCategory(category)}
+              onClick={() => handleToggleCategory(category)
+              }
               aria-expanded={isOpen}
+              id={category}
             >
               <span>{category}</span>
               <span className={`${styles.arrow} ${isOpen ? styles.arrowUp : ''}`}>
