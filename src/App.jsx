@@ -8,6 +8,9 @@ import Testimonials from './components/Testimonials';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import CategoryProductsPage from './pages/CategoryProductsPage'; 
+import Contact from './pages/Contact';
+import Impressum from './pages/Impressum';
+import Datenschutz from './pages/Datenschutz';
 
 function App() {
   return (
@@ -30,7 +33,9 @@ function App() {
 
           
           <Route path="/features/:categoryId" element={<CategoryProductsPage />} />
-
+          <Route path="/kontakt" element={<Contact />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
 
         </Routes>
       </main>

@@ -16,7 +16,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={`${styles.container} container`}>
-        <a href="#hero" className={styles.logo} onClick={closeMenu}>
+        <a href="/" className={styles.logo} onClick={closeMenu}>
           Nil Gastro
         </a>
 
@@ -41,7 +41,7 @@ function Header() {
               <a href="#testimonials" className={styles.navLink} onClick={closeMenu}>Erfahrungsberichte</a>
             </li>
             <li className={styles.navItem}>
-              <a href="#cta" className={styles.navLink} onClick={closeMenu}>Kontakt</a>
+              <a href="/kontakt" className={styles.navLink} onClick={closeMenu}>Kontakt</a>
             </li>
           </ul>
           <a href="#cta" className={`${styles.navCta} button button-primary`} onClick={closeMenu}>

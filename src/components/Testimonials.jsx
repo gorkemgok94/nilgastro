@@ -9,10 +9,10 @@ import avatar3 from '../assets/avatar-3.webp';
 
 const testimonialsData = [
   {
-    quote: "This service has completely transformed how we operate. The efficiency gains are incredible!",
-    name: "Jane Doe",
-    title: "CEO, Tech Solutions",
-    avatar: avatar1,
+    quote: "Dieser Service hat unsere Arbeitsweise komplett verändert. Die Effizienzsteigerungen sind unglaublich!",
+    name: "Süreyya Cengiz",
+    title: "Logistik Expert",
+    avatar: "https://i.imgur.com/04Rrpzs.jpeg",
   },
   {
     quote: "Outstanding support and a truly intuitive platform. Highly recommended for anyone looking to scale.",

@@ -11,7 +11,7 @@ function Hero() {
       <div className={`${styles.container} container`}>
         <div className={styles.content}>
           <h1 className={styles.headline}>
-            Von A nach B, mit Herz und Verstand.
+            Von A bis zum Z, mit Herz und Verstand.
           </h1>
           <p className={styles.subheadline}>
             Intelligente Logistik für eine schnellebige Welt. Liefern Sie schneller, senken Sie Kosten und begeistern Sie Ihre Kunden.

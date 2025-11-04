@@ -58,6 +58,7 @@ const featuresData = [
 
 function Products() {
 
+  const successRef = React.useRef(null);
   const { cart, addToCart, removeFromCart, setCart } = useCart();
   const { orderStatus, setOrderStatus, generateAndDownloadPDF } = useOrder();
   // Render server ping to keep it awake hahaha >:D
@@ -71,7 +72,7 @@ function Products() {
   const [name, setName] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [products, setProducts] = useState([]);
-  
+
 
 
   useEffect(() => {
@@ -116,6 +117,9 @@ function Products() {
       if (data.success) {
         setOrderStatus({ loading: false, success: true, error: null });
 
+        setTimeout(() => {
+          successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
         // Generate and download PDF
         generateAndDownloadPDF(name, cart);
 
@@ -136,23 +140,6 @@ function Products() {
 
   return (
     <section id="features" className={styles.features}>
-      {/*
-      <div className={`${styles.container} container`}>
-        <h2 className={styles.heading}>Produkte</h2>
-        <p className={styles.subheading}>
-          Alle Produkte, die Sie für Ihr Unternehmen benötigen, finden Sie in unseren untenstehenden Kategorien.
-        </p>
-        <div className={styles.grid}>
-          {featuresData.map((feature, index) => (
-            <div key={feature.id} className={styles.featureCard}>
-              <div className={styles.iconWrapper}>{feature.icon}</div>
-              <Link to={`/features/${feature.id}`}>{feature.title}</Link>
-              <p className={styles.cardDescription}>{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>  
-      */}
 
       <ProductList
         products={products}
@@ -163,24 +150,25 @@ function Products() {
 
       <div className={styles.shoppingCart}>
         <div className={styles.cartBox}>
-          <h3 className={styles.cartHeading}>Shopping Cart</h3>
-          {cart.length === 0 ? (
-            <p className={styles.cartEmpty}>Your cart is empty.</p>
-          ) : (
-            <ul className={styles.cartList}>
-              {cart.map(item => (
+          <h3 className={styles.cartHeading}>Warenkorb</h3>
+          <ul className={styles.cartList}>
+            {cart.length === 0 ? (
+              <li className={styles.cartEmpty}>Ihr Warenkorb ist leer.</li>
+            ) : (
+              cart.map(item => (
                 <li key={item.id} className={styles.cartItem}>
                   <span className={styles.cartProduct}>{item.name}</span>
                   <span className={styles.cartQuantity}>× {item.quantity}</span>
                 </li>
-              ))}
-            </ul>
-          )}
+              ))
+            )}
+          </ul>
+
         </div>
         <div className={styles.cartActions}>
           <input
             type="text"
-            placeholder="Ihr Name"
+            placeholder="Ihr Ladens Name"
             value={name}
             onChange={e => setName(e.target.value)}
             className={styles.orderNameInput}
@@ -198,7 +186,8 @@ function Products() {
             </div>
           )}
           {orderStatus.success && (
-            <div className={styles.successMessage}>
+            <div className={styles.successMessage} ref={successRef}
+            >
               Bestellung erfolgreich! Eine PDF-Bestätigung wird heruntergeladen.
             </div>
           )}
