@@ -22,6 +22,29 @@
   padding: var(--space-xs) 0;
 }
 
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cartLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-color-dark);
+}
+.cartBadge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
 .menuButton {
   background: none;
   border: none;

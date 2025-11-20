@@ -1,21 +1,23 @@
 // src/App.jsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'; 
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Products';
 import Testimonials from './components/Testimonials';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
-import CategoryProductsPage from './pages/CategoryProductsPage'; 
+import CategoryProductsPage from './pages/CategoryProductsPage';
 import Contact from './pages/Contact';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <>
-      <Header /> 
+      <CartProvider>
+      <Header />
 
       <main>
         <Routes>
@@ -24,14 +26,14 @@ function App() {
             element={
               <>
                 <Hero />
-                <Features /> 
+                <Features />
                 <Testimonials />
                 <CallToAction />
               </>
             }
           />
 
-          
+
           <Route path="/features/:categoryId" element={<CategoryProductsPage />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/impressum" element={<Impressum />} />
@@ -40,7 +42,8 @@ function App() {
         </Routes>
       </main>
 
-      <Footer /> 
+      <Footer />
+    </CartProvider >
     </>
   );
 }

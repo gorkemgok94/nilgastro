@@ -1,9 +1,12 @@
 // src/components/Header.jsx
 import React, { useState } from 'react';
 import styles from './Header.module.css'; // Import CSS Module
+import { useCartContext } from '../context/CartContext';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { cart } = useCartContext();
+  const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -48,7 +51,19 @@ function Header() {
             Kunde werden
           </a>
         </nav>
+
+        {/* TODO: This div below makes the whole setting of navbar messy. It pushes all the other elements to left to make itself space. */}
+
+        {/* 
+        <div className={styles.headerRight}>
+          TODO: Link to #features where your cart lives or to a cart page
+          <a href="#features" className={styles.cartLink} aria-label={`Warenkorb, ${totalItems} Artikel`}>
+            <svg>...cart icon...</svg>
+            {totalItems > 0 && <span className={styles.cartBadge}>{totalItems}</span>}
+          </a>
+        </div> */} 
       </div>
+
     </header>
   );
 }

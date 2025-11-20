@@ -95,6 +95,21 @@
     "imageSrc": "https://amatulli.de/media/10/d8/93/1741594592/pizzakartonfrancia4farb_bde5ad96-7d9c-4865-b0bf-5dc9d2f64af4_446x446.png?ts=1754387602"
   },
   {
+    "id": "pizzakarton-30cm",
+    "name": "Pizzakarton 30x30x4 cm",
+    "category": "Verpackungen",
+    "sku": "PK-30",
+    "unit": "Stück",
+    "pack": 100,
+    "tags": [
+      "pizza",
+      "karton",
+      "box",
+      "30cm",
+      "takeaway"
+    ]
+  },
+  {
     "id": "pizzakarton-50cm",
     "name": "Pizzakarton 50x50 cm",
     "category": "Verpackungen",
@@ -1433,21 +1448,6 @@
       "box",
       "falafel",
       "karton",
-      "takeaway"
-    ]
-  },
-  {
-    "id": "pizzakarton-30cm",
-    "name": "Pizzakarton 30x30x4 cm",
-    "category": "Verpackungen",
-    "sku": "PK-30",
-    "unit": "Stück",
-    "pack": 100,
-    "tags": [
-      "pizza",
-      "karton",
-      "box",
-      "30cm",
       "takeaway"
     ]
   },
