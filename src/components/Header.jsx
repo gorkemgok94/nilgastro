@@ -1,5 +1,6 @@
 // src/components/Header.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Import CSS Module
 import { useCartContext } from '../context/CartContext';
 
@@ -51,17 +52,19 @@ function Header() {
             Kunde werden
           </a>
         </nav>
-
-        {/* TODO: This div below makes the whole setting of navbar messy. It pushes all the other elements to left to make itself space. */}
-
-        {/* 
         <div className={styles.headerRight}>
-          TODO: Link to #features where your cart lives or to a cart page
-          <a href="#features" className={styles.cartLink} aria-label={`Warenkorb, ${totalItems} Artikel`}>
-            <svg>...cart icon...</svg>
-            {totalItems > 0 && <span className={styles.cartBadge}>{totalItems}</span>}
-          </a>
-        </div> */} 
+          <Link to="/cart" className={styles.cartLink} aria-label="View cart" onClick={closeMenu}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={styles.icon}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 17a2 2 0 100 4 2 2 0 000-4zm-8 0a2 2 0 100 4 2 2 0 000-4z" />
+            </svg>
+            {totalItems > 0 && (
+              <span className={styles.cartBadge} aria-hidden>
+                {totalItems}
+              </span>
+            )}
+          </Link>
+        </div>
       </div>
 
     </header>

@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 import { CartProvider } from './context/CartContext';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
-
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
 
