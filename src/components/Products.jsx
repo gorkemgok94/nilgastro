@@ -152,6 +152,7 @@ function Products() {
       <div className={styles.shoppingCart}>
         <div className={styles.cartBox}>
           <h3 className={styles.cartHeading}>Warenkorb</h3>
+          <h4 className={styles.checkoutHeading}>Schnell Checkout</h4>
           <ul className={styles.cartList}>
             {cart.length === 0 ? (
               <li className={styles.cartEmpty}>Ihr Warenkorb ist leer.</li>

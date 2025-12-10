@@ -59,7 +59,7 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
               <ul className={styles.productUl}>
                 {groupedProducts[category].map((product) => {
                   // Find this product in the cart to display its quantity
-                  const cartItem = cart.find(item => item.name === product.name);
+                  const cartItem = cart.find(item => item.id === product.id);
                   const quantity = cartItem ? cartItem.quantity : 0;
 
                   return (
@@ -82,14 +82,14 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
                       <div className={styles.buttonGroup}>
                         <button
                           className={styles.productBtn}
-                          onClick={() => onAddToCart(product.name)}
+                          onClick={() => onAddToCart(product)}
                           aria-label={`Add ${product.name}`}
                         >
                           +
                         </button>
                         <button
                           className={styles.productBtn}
-                          onClick={() => onRemoveFromCart(product.name)} // Pass the whole product object
+                          onClick={() => onRemoveFromCart(product)} // Pass the whole product object
                           aria-label={`Remove ${product.name}`}
                         >
                           -

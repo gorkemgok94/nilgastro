@@ -4,6 +4,7 @@ import styles from './Hero.module.css';
 
 // Placeholder image (replace with your own)
 import heroImage from '../assets/HakanGorkem.jpg'; // Create this file or replace path
+import { Link } from 'react-router-dom';
 
 function Hero() {
   return (
@@ -17,7 +18,7 @@ function Hero() {
             Intelligente Logistik für eine schnellebige Welt. Liefern Sie schneller, senken Sie Kosten und begeistern Sie Ihre Kunden.
           </p>
           <div className={styles.buttons}>
-            <a href="#cta" className="button button-primary">Kunde werden</a>
+            <Link to="/kontakt" className="button button-primary">Kunde werden</Link>
             <a href="#features" className="button button-secondary">Produkte</a>
           </div>
         </div>

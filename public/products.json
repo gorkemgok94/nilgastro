@@ -1841,20 +1841,6 @@
     "imageSrc": "https://www.shutterstock.com/image-vector/drop-hand-icon-line-hygiene-260nw-1689947281.jpg"
   },
   {
-    "id": "doenertuete-weiss",
-    "name": "Dönertüte weiß",
-    "category": "Verpackungen",
-    "sku": "DT-WS",
-    "unit": "Stück",
-    "pack": 1,
-    "tags": [
-      "tüte",
-      "takeaway",
-      "döner"
-    ],
-    "imageSrc": "https://cdn-icons-png.freepik.com/512/6724/6724561.png"
-  },
-  {
     "id": "plastik-tragetasche-48cm",
     "name": "Plastik Tragetasche 48 cm",
     "category": "Verpackungen",

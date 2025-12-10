@@ -18,31 +18,35 @@ function useCart() {
         return () => clearTimeout(handle);
     }, [cart]);
 
-    const addToCart = (productName) => {
+    const addToCart = (product) => {
         setCart((prev) => {
-            const existing = prev.find(item => item.name === productName);
+            const existing = prev.find(item => item.id === product.id);
             if (existing) {
                 return prev.map(item =>
-                    item.name === productName
+                    item.id === product.id
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
                 );
             } else {
-                return [...prev, { id: Date.now(), name: productName, quantity: 1 }];
+                return [...prev, {
+                    id: product.id,
+                    name: product.name,
+                    quantity: 1
+                }];
             }
         });
     };
 
-    const removeFromCart = (productName) => {
+    const removeFromCart = (product) => {
         setCart((prev) => {
-            const existing = prev.find(item => item.name === productName);
+            const existing = prev.find(item => item.id === product.id);
             if (!existing) return prev;
 
             if (existing.quantity === 1) {
-                return prev.filter(item => item.name !== productName);
+                return prev.filter(item => item.id !== product.id);
             } else {
                 return prev.map(item =>
-                    item.name === productName
+                    item.id === product.id
                         ? { ...item, quantity: item.quantity - 1 }
                         : item
                 );

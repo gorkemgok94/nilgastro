@@ -2,6 +2,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import Features from './components/Products';
 import Testimonials from './components/Testimonials';
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <CartProvider>
+      <ScrollToTop />
       <Header />
 
       <main>
