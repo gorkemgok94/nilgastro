@@ -138,3 +138,27 @@
     text-align: center;
   }
 }
+
+/* src/components/Header.module.css */
+/* ... existing styles ... */
+
+/* NEW: Jump animation for cart badge */
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);  /* Adjust -8px for jump height */
+  }
+}
+
+.jump {
+  animation: jump 0.5s ease-in-out;
+}
+
+/* Optional: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .jump {
+    animation: none;
+  }
+}

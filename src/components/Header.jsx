@@ -1,13 +1,25 @@
 // src/components/Header.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';  // Added useEffect to imports
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css'; // Import CSS Module
 import { useCartContext } from '../context/CartContext';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { cart } = useCartContext();
+  const { cart, triggerJump, resetTriggerJump } = useCartContext();  // Added triggerJump and resetTriggerJump
   const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+
+  // NEW: State for jump animation
+  const [isJumping, setIsJumping] = useState(false);
+
+  // NEW: Effect to handle the jump trigger
+  useEffect(() => {
+    if (triggerJump) {
+      setIsJumping(true);          // Start the animation
+      resetTriggerJump();          // Reset the trigger immediately
+      setTimeout(() => setIsJumping(false), 500);  // End animation after 0.5s (matches CSS duration)
+    }
+  }, [triggerJump, resetTriggerJump]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -59,7 +71,7 @@ function Header() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M16 17a2 2 0 100 4 2 2 0 000-4zm-8 0a2 2 0 100 4 2 2 0 000-4z" />
             </svg>
             {totalItems > 0 && (
-              <span className={styles.cartBadge} aria-hidden>
+              <span className={`${styles.cartBadge} ${isJumping ? styles.jump : ''}`}>  {/* Added conditional jump class */}
                 {totalItems}
               </span>
             )}
