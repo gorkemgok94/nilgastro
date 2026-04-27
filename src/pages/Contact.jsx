@@ -53,8 +53,8 @@ function Contact() {
           <div style={styles.socials}>
             <p style={styles.infoLabel}>Folgen Sie uns</p>
             <div style={styles.socialIcons}>
-              <button style={styles.socialBtn}>Instagram</button>
-              <button style={styles.socialBtn}>Facebook</button>
+              <a href="https://www.instagram.com/nilgastro/" target="_blank" rel="noopener noreferrer" style={styles.socialBtn}>Instagram</a>
+              <a href="https://www.facebook.com/nilgastro/" target="_blank" rel="noopener noreferrer" style={styles.socialBtn}>Facebook</a>
             </div>
           </div>
         </div>
