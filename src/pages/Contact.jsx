@@ -18,7 +18,7 @@ function Contact() {
               <IconPhone />
               <div>
                 <p style={styles.infoLabel}>Telefon</p>
-                <p>Hakan Topalca: <a href="tel:015229470726" style={styles.link}>01522 9470726</a></p>
+                <p>Hakan Topalca (Inhaber): <a href="tel:015229470726" style={styles.link}>01522 9470726</a></p>
                 <p>Görkem Gök: <a href="tel:01782578006" style={styles.link}>0178 2578006</a></p>
               </div>
             </div>
@@ -35,7 +35,7 @@ function Contact() {
               <IconMap />
               <div>
                 <p style={styles.infoLabel}>Adresse</p>
-                <p>Benzstr. 5, 71149, Bondorf</p>
+                <p>Stettenstraße 19, 72131 Ofterdingen</p>
               </div>
             </div>
 
@@ -43,8 +43,7 @@ function Contact() {
               <IconClock />
               <div>
                 <p style={styles.infoLabel}>Öffnungszeiten</p>
-                <p>Mo - Fr: 07:00 - 14:00</p>
-                <p>Samstag: 08:00 - 14:00</p>
+                <p>Mo - Fr: 08:00 - 16:00</p>
               </div>
             </div>
           </div>
@@ -70,7 +69,7 @@ function Contact() {
           scrolling="no"
           marginHeight="0"
           marginWidth="0"
-          src="https://maps.google.com/maps?q=Benzstr.+5,+71149,+Bondorf&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Stettenstraße+19,+72131,+Ofterdingen&t=&z=15&ie=UTF8&iwloc=&output=embed"
           style={styles.mapFrame}
         ></iframe>
       </div>

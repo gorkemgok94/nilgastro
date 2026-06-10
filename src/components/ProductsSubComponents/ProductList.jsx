@@ -30,7 +30,7 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
 
   return (
     <div className={styles.productsList}>
-      <h3>Products</h3>
+      <h3>Produkte</h3>
       {categories.map((category) => {
         const isOpen = openCategory === category;
         return (
