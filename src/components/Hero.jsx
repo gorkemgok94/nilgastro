@@ -38,28 +38,28 @@ function Hero() {
         }}
       >
         <SwiperSlide>
-          <img src="public/angebotimages/01.png" alt="1" />
+          <img src="/angebotimages/01.png" alt="1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="public/angebotimages/02.png" alt="2" />
+          <img src="/angebotimages/02.png" alt="2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="public/angebotimages/03.png" alt="3" />
+          <img src="/angebotimages/03.png" alt="3" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="public/angebotimages/04.png" alt="4" />
+          <img src="/angebotimages/04.png" alt="4" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="public/angebotimages/05.png" alt="5" />
+          <img src="/angebotimages/05.png" alt="5" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="public/angebotimages/06.png" alt="6" />
+          <img src="/angebotimages/06.png" alt="6" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="public/angebotimages/07.png" alt="7" />
+          <img src="/angebotimages/07.png" alt="7" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="public/angebotimages/08.png" alt="8" />
+          <img src="/angebotimages/08.png" alt="8" />
         </SwiperSlide>
       </Swiper>
       <div className={`${styles.container} container`}>
