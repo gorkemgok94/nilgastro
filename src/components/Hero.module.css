@@ -20,6 +20,7 @@
   font-size: 3.5rem; /* Large headline */
   margin-bottom: var(--space-md);
   color: var(--primary-color);
+  margin-top: 50px; /* Remove default margin */
 }
 
 .subheadline {
@@ -53,6 +54,24 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.swiper :global(.swiper-slide) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.swiper img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
 /* --- Desktop Responsiveness (Min-width media queries) --- */
 @media (min-width: 769px) {
   .hero {
@@ -83,6 +102,11 @@
     display: flex;
     justify-content: center; /* Center image if it's smaller than max-width */
     align-items: center;
+  }
+  
+  .swiper {
+    width: 80%;
+    margin: 0 auto; /* centers it */
   }
 }
 

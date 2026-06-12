@@ -12,6 +12,7 @@ import CategoryProductsPage from './pages/CategoryProductsPage';
 import Contact from './pages/Contact';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
+import AGBPage from './pages/GeneralTermsAndConditions';
 import { CartProvider } from './context/CartContext';
 import Cart from './pages/Cart';
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/agb" element={<AGBPage />} />
         </Routes>
       </main>
 

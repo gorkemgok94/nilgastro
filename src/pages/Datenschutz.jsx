@@ -14,7 +14,7 @@ const Datenschutz = () => {
           <br />
           Vertreten durch Görkem Gök
           <br />
-          E-Mail: nilgastro@outlook.default
+          E-Mail: nilgastro@outlook.de
           <br />
           Adresse: Benzstr. 5, 71149 Bondorf, Deutschland
         </p>

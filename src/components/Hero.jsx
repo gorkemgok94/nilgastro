@@ -1,6 +1,10 @@
 // src/components/Hero.jsx
 import React from 'react';
 import styles from './Hero.module.css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+
 
 // Placeholder image (replace with your own)
 import heroImage from '../assets/HakanGorkem.jpg'; // Create this file or replace path
@@ -9,6 +13,55 @@ import { Link } from 'react-router-dom';
 function Hero() {
   return (
     <section id="hero" className={styles.hero}>
+      <Swiper
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+          1800: {
+            slidesPerView: 3,
+          },
+        }}
+        className={styles.swiper}
+        spaceBetween={20}
+        slidesPerView={1}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+      >
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/01.png" alt="1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/02.png" alt="2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/03.png" alt="3" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/04.png" alt="4" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/05.png" alt="5" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/06.png" alt="6" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/07.png" alt="7" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="src/assets/AngebotFotos/08.png" alt="8" />
+        </SwiperSlide>
+      </Swiper>
       <div className={`${styles.container} container`}>
         <div className={styles.content}>
           <h1 className={styles.headline}>

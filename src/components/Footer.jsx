@@ -39,6 +39,7 @@ function Footer() {
                 <li><a href="/impressum">Impressum</a></li>
                 <li><a href="/kontakt">Kontakt</a></li>
                 <li><a href="/datenschutz">Datenschutzerklärung</a></li>
+                <li><a href="/agb">AGB</a></li>
               </ul>
             </div>
           </div>
