@@ -1,4 +1,5 @@
 import React from 'react';
+import useCookieConsent from '../hooks/useCookieConsent';
 
 function Contact() {
   return (
@@ -61,19 +62,50 @@ function Contact() {
 
       {/* Map Section */}
       <div style={styles.mapSection}>
-        <iframe
-          title="Google Maps Location"
-          width="100%"
-          height="450"
-          frameBorder="0"
-          scrolling="no"
-          marginHeight="0"
-          marginWidth="0"
-          src="https://maps.google.com/maps?q=Stettenstraße+19,+72131,+Ofterdingen&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          style={styles.mapFrame}
-        ></iframe>
+        <ContactMap />
       </div>
     </div>
+  );
+}
+
+function ContactMap() {
+  const { consent, hasConsent, hasDeclined, acceptExternalContent } = useCookieConsent();
+
+  if (!consent.externalContent && consent.externalContent !== false) {
+    return (
+      <div style={styles.mapPlaceholder}>
+        <p style={styles.mapPlaceholderText}>
+          Zur Anzeige der Karte benötigen wir Ihre Einwilligung. Sie können Google Maps hier laden.
+        </p>
+        <button style={styles.mapButton} onClick={acceptExternalContent}>
+          Karte laden
+        </button>
+      </div>
+    );
+  }
+
+  if (hasDeclined) {
+    return (
+      <div style={styles.mapPlaceholder}>
+        <p style={styles.mapPlaceholderText}>
+          Sie haben das Laden von Google Maps abgelehnt. Die Karte wird nicht angezeigt.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <iframe
+      title="Google Maps Location"
+      width="100%"
+      height="450"
+      frameBorder="0"
+      scrolling="no"
+      marginHeight="0"
+      marginWidth="0"
+      src="https://maps.google.com/maps?q=Stettenstraße+19,+72131,+Ofterdingen&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      style={styles.mapFrame}
+    ></iframe>
   );
 }
 
@@ -190,7 +222,31 @@ const styles = {
   },
   mapFrame: {
     display: 'block',
-  }
+  },
+  mapPlaceholder: {
+    minHeight: '450px',
+    backgroundColor: '#f8f9fa',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '2rem',
+    textAlign: 'center',
+  },
+  mapPlaceholderText: {
+    marginBottom: '1rem',
+    color: '#444',
+    maxWidth: '620px',
+  },
+  mapButton: {
+    backgroundColor: '#2563eb',
+    color: '#fff',
+    border: 'none',
+    padding: '0.85rem 1.25rem',
+    borderRadius: '0.75rem',
+    cursor: 'pointer',
+    fontSize: '1rem',
+  },
 };
 
 export default Contact;

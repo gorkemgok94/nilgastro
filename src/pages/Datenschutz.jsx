@@ -78,8 +78,12 @@ const Datenschutz = () => {
       <section className="mb-4">
         <h2 className="text-xl font-semibold mb-2">8. Nutzung externer Inhalte</h2>
         <p>
-          Unsere Webseite kann Links zu Social-Media-Plattformen und Google Maps enthalten.  
-          Für die Verarbeitung Ihrer Daten auf diesen externen Seiten sind ausschließlich die jeweiligen Betreiber verantwortlich.
+          Unsere Webseite kann Links zu Social-Media-Plattformen und Google Maps enthalten.
+          Google Maps wird erst nach Ihrer ausdrücklichen Einwilligung geladen.
+          Ohne Einwilligung wird die Karte nicht angezeigt.
+        </p>
+        <p>
+          Für die Verarbeitung Ihrer Daten auf externen Seiten sind ausschließlich die jeweiligen Betreiber verantwortlich.
         </p>
       </section>
 

@@ -15,18 +15,9 @@ function Hero() {
     <section id="hero" className={styles.hero}>
       <Swiper
         breakpoints={{
-          640: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 1,
-          },
-          1024: {
-            slidesPerView: 2,
-          },
-          1800: {
-            slidesPerView: 3,
-          },
+          0: { slidesPerView: 1 },
+          1024: { slidesPerView: 2 },
+          1800: { slidesPerView: 3 },
         }}
         className={styles.swiper}
         spaceBetween={20}
@@ -72,7 +63,9 @@ function Hero() {
           </p>
           <div className={styles.buttons}>
             <Link to="/kontakt" className="button button-primary">Kunde werden</Link>
-            <a href="#features" className="button button-secondary">Produkte</a>
+            <Link to="/products" className="button button-primary">
+              Mehr Produkte anzeigen
+            </Link>
           </div>
         </div>
         <div className={styles.imageWrapper}>

@@ -2,8 +2,9 @@ import React, { useState, useMemo } from 'react';
 import styles from './ProductsList.module.css';
 
 const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
-  const [openCategory, setOpenCategory] = useState(null);
-  
+  // Selected category via badges
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
   // NEW: State for the modal
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -16,11 +17,11 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
     }, {});
   }, [products]);
 
-  const handleToggleCategory = (category) => {
-    setOpenCategory(openCategory === category ? null : category);
-    requestAnimationFrame(() => {
-      document.getElementById(category)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
+  const handleSelectCategory = (category) => {
+    setSelectedCategory((prev) => (prev === category ? null : category));
+    {/*requestAnimationFrame(() => {
+      document.getElementById('products-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });*/}
   };
 
   // NEW: Close modal function
@@ -31,70 +32,69 @@ const ProductsList = ({ products, cart, onAddToCart, onRemoveFromCart }) => {
   return (
     <div className={styles.productsList}>
       <h3>Produkte</h3>
-      {categories.map((category) => {
-        const isOpen = openCategory === category;
-        return (
-          <div key={category} className={styles.categorySection}>
-            <button
-              className={styles.categoryHeader}
-              onClick={() => handleToggleCategory(category)}
-              aria-expanded={isOpen}
-              id={category}
-            >
-              <span>{category}</span>
-              <span className={`${styles.arrow} ${isOpen ? styles.arrowUp : ''}`}>▼</span>
-            </button>
+      {/* Category badges */}
+      <div className={styles.badgesContainer}>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`${styles.badge} ${selectedCategory === category ? styles.badgeActive : ''}`}
+            onClick={() => handleSelectCategory(category)}
+            aria-pressed={selectedCategory === category}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
-            {isOpen && (
-              <ul className={styles.productUl}>
-                {groupedProducts[category].map((product) => {
-                  const cartItem = cart.find(item => item.id === product.id);
-                  const quantity = cartItem ? cartItem.quantity : 0;
+      {/* Products for selected category */}
+      {selectedCategory ? (
+        <ul id="products-list" className={styles.productUl}>
+          {groupedProducts[selectedCategory].map((product) => {
+            const cartItem = cart.find(item => item.id === product.id);
+            const quantity = cartItem ? cartItem.quantity : 0;
 
-                  return (
-                    <li key={product.id} className={styles.productLi}>
-                      {/* Clicking the Image or Name opens the modal */}
-                      <div 
-                        className={styles.productInfoTrigger} 
-                        onClick={() => setSelectedProduct(product)}
-                      >
-                        {product.imageSrc && (
-                          <img src={product.imageSrc} alt={product.name} className={styles.productImage} />
-                        )}
-                        <span className={styles.productName}>
-                          {product.name}
-                          {quantity > 0 && <span className={styles.quantity}> × {quantity}</span>}
-                        </span>
-                      </div>
+            return (
+              <li key={product.id} className={styles.productLi}>
+                <div
+                  className={styles.productInfoTrigger}
+                  onClick={() => setSelectedProduct(product)}
+                >
+                  {product.imageSrc && (
+                    <img src={product.imageSrc} alt={product.name} className={styles.productImage} />
+                  )}
+                  <span className={styles.productName}>
+                    {product.name}
+                    {quantity > 0 && <span className={styles.quantity}> × {quantity}</span>}
+                  </span>
+                </div>
 
-                      <div className={styles.buttonGroup}>
-                        <button
-                          className={styles.productBtn}
-                          onClick={(e) => {
-                            e.stopPropagation(); // Prevent opening modal
-                            onAddToCart(product);
-                          }}
-                        >
-                          +
-                        </button>
-                        <button
-                          className={styles.productBtn}
-                          onClick={(e) => {
-                            e.stopPropagation(); // Prevent opening modal
-                            onRemoveFromCart(product);
-                          }}
-                        >
-                          -
-                        </button>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
-        );
-      })}
+                <div className={styles.buttonGroup}>
+                  <button
+                    className={styles.productBtn}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onAddToCart(product);
+                    }}
+                  >
+                    +
+                  </button>
+                  <button
+                    className={styles.productBtn}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onRemoveFromCart(product);
+                    }}
+                  >
+                    -
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p className={styles.selectPrompt}>Wähle eine Kategorie, um Produkte anzuzeigen.</p>
+      )}
 
       {/* NEW: Modal Component logic */}
       {selectedProduct && (

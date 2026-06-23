@@ -8,14 +8,20 @@ function ScrollToTop() {
     // If the url contains a hash (e.g. /#features) try to scroll to that element
     if (hash) {
       const id = hash.replace('#', '');
-      const el = document.getElementById(id);
-      if (el) {
-        // Account for a fixed header if present
+      const scrollToHash = () => {
+        const el = document.getElementById(id);
+        if (!el) {
+          window.requestAnimationFrame(scrollToHash);
+          return;
+        }
+
         const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset - 8;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset - 12;
         window.scrollTo({ top: y, behavior: 'smooth' });
-        return;
-      }
+      };
+
+      scrollToHash();
+      return;
     }
 
     // Default: scroll to top on route change

@@ -210,3 +210,50 @@
     cursor: pointer;
     width: 100%;
 }
+
+/* 6. CATEGORY BADGES (modern, business-friendly) */
+.badgesContainer {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1rem 0;
+}
+
+.badge {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  border: 1px solid #e6eef8;
+  color: #16324f;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(8,20,40,0.03);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+}
+
+.badge:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13,110,253,0.12);
+}
+
+.badgeActive {
+  background: linear-gradient(180deg, #0d6efd 0%, #0956d6 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(13,110,253,0.18);
+}
+
+.selectPrompt {
+  color: #6b7280;
+  text-align: center;
+  padding: 1rem 0;
+}

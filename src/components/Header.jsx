@@ -51,18 +51,24 @@ function Header() {
         <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="#features" className={styles.navLink} onClick={closeMenu}>Produkte</a>
+              <Link to="/products" className={styles.navLink} onClick={closeMenu}>
+                Produkte
+              </Link>
             </li>
+
+            {/* <li className={styles.navItem}>
+              <Link to="/#testimonials" className={styles.navLink} onClick={closeMenu}>
+                Erfahrungsberichte
+              </Link>
+            </li>*/}
+
             <li className={styles.navItem}>
-              <a href="#testimonials" className={styles.navLink} onClick={closeMenu}>Erfahrungsberichte</a>
-            </li>
-            <li className={styles.navItem}>
-              <a href="/kontakt" className={styles.navLink} onClick={closeMenu}>Kontakt</a>
+              <Link to="/kontakt" className={styles.navLink} onClick={closeMenu}>Kontakt</Link>
             </li>
           </ul>
-          <a href="#cta" className={`${styles.navCta} button button-primary`} onClick={closeMenu}>
+          <Link to="/#cta" className={`${styles.navCta} button button-primary`} onClick={closeMenu}>
             Kunde werden
-          </a>
+          </Link>
         </nav>
         <div className={styles.headerRight}>
           <Link to="/cart" className={styles.cartLink} aria-label="View cart" onClick={closeMenu}>
